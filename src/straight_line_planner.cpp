@@ -133,7 +133,7 @@ nav_msgs::msg::Path StraightLine::createPlan(
     double yaw = yaw_start + yaw_increment * i;
     tf2::Quaternion quaternion;
     quaternion.setRPY(0, 0, yaw);
-   
+    quaternion.normalize();
     pose.pose.orientation.x = quaternion.x();
     pose.pose.orientation.y = quaternion.y();
     pose.pose.orientation.z = quaternion.z();
